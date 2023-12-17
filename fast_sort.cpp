@@ -129,16 +129,16 @@ namespace Slava{
 
 
 int main() {
-    tip max = Binpow(2, 31) - 1;
-    tip n = 5;
+    tip max = Binpow(2, 32) - 1;
+    tip n = 1e7;
     random_device rd;
     uniform_int_distribution<tip> dist(1, max);
     vector<tip> a;
     for (int i = 0; i < n; i++)
         a.push_back(dist(rd));
     auto t = clock()/(double)1000;
-    Ivan::fast_sort_by_trofimov(a);
-    //Slava::fast_sort(a);
+    //Ivan::fast_sort_by_trofimov(a);
+    Slava::fast_sort(a);
     cout << "time: " << clock()/(double)1000 - t << '\n';
     system("pause");
 }
