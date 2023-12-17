@@ -8,8 +8,6 @@ using ll = long long;
 #define sqr(x) (x)*(x)
 #define tip unsigned int
 
-const auto pi = acos(-1);
-
 #pragma GCC target("avx2")
 #pragma GCC optimization("O3")
 #pragma GCC optimization("unroll-loops")
@@ -24,7 +22,7 @@ vector<T> create_copy(std::vector<T> const &vec) {
 }
 
 template <typename T>
-void pra(vector<T> &a) {
+void P(vector<T> &a) {
     for (auto &x : a) cout << x << ' ';
 }
 
@@ -71,7 +69,7 @@ namespace Ivan {
     }
 
     template <typename T>
-    void fast_sort_by_trofimov(std::vector<T>& a) {
+    void fast_sort(std::vector<T>& a) {
         RadixSort(a, (uint32_t)Binpow(2, 14));
     }
 }
@@ -137,7 +135,7 @@ int main() {
     for (int i = 0; i < n; i++)
         a.push_back(dist(rd));
     auto t = clock()/(double)1000;
-    //Ivan::fast_sort_by_trofimov(a);
+    //Ivan::fast_sort(a);
     Slava::fast_sort(a);
     cout << "time: " << clock()/(double)1000 - t << '\n';
     system("pause");
