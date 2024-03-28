@@ -135,7 +135,7 @@ int main() {
     for (int i = 0; i < n; i++)
         a.push_back(dist(rd));
     auto t = clock()/(double)1000;
-    //Ivan::fast_sort(a);
+    //Ivan::fast_sort(a);  faster
     Slava::fast_sort(a);
     cout << "time: " << clock()/(double)1000 - t << '\n';
     system("pause");
